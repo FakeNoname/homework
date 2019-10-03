@@ -1,0 +1,27 @@
+#Сортировка выбором
+a = [249, 229, 538, 22, 227, 243, 773, 300, 868, 205, 105, 686, 784, 355, 874]
+ 
+for i in range(len(a)-1):
+    minimum = a[i]
+    for j in range(i + 1, len(a)):
+        if a[j] < minimum:
+            minimum = a[j]
+            index_of_min = j
+            a[i], a[index_of_min] = a[index_of_min], a[i]
+print(a)
+
+
+
+
+
+#Сортировка вставкой
+def insertion_sort_m(a):
+    for i in range(len(a)):
+        tmp = a[i]
+        j = i - 1
+        while j >= 0 and tmp < a[j]:
+            a[j+1], a[j] = a[j], a[j+1]
+            j -= 1
+    return(a)
+
+print(insertion_sort_m([320, 479, 625, 163, 528, 399, 85, 4, 327, 798, 80, 665, 23, 971, 299]))
